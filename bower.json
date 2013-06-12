@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "normalize-css": "latest",
-    "requirejs": "latest"
+    "requirejs": "latest",
+    "requirejs-domready": "latest"
   },
   "install": {
     "path": {
@@ -11,8 +12,15 @@
       "js": "js/lib"
     },
     "sources": {
-      "normalize-css": [ "components/normalize-css/normalize.css" ],
-      "requirejs": [ "components/requirejs/require.js" ]
+      "normalize-css": [
+        "components/normalize-css/normalize.css"
+      ],
+      "requirejs": [
+        "components/requirejs/require.js"
+      ],
+      "requirejs-domready": [
+        "components/requirejs-domready/domReady.js"
+      ]
     }
   }
 }
