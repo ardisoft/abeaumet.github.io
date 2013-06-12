@@ -2,6 +2,7 @@
   "name": "abeaumet.github.com",
   "version": "0.0.0",
   "dependencies": {
-    "normalize-css": "~2.1.2"
+    "normalize-css": "~2.1.2",
+    "requirejs": "~2.1.6"
   }
 }
