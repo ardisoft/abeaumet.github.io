@@ -1,0 +1,60 @@
+div {
+  border: 1px solid #000000;
+}
+
+.displayedWithJS {
+  display: none;
+}
+
+#showSidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+}
+
+#global {
+  margin: 0 auto;
+  width: 80%;
+  min-width: 600px;
+  max-width: 950px;
+}
+
+#navbar > a.selected {
+  background-color: black;
+  color: white;
+}
+
+#post {
+  text-align: justify;
+}
+
+#sidebar {
+  position: relative;
+  float: right;
+  width: 200px;
+}
+
+#footer {
+  clear: both;
+  text-align: center;
+}
+
+/*@media only screen and (max-device-width: 480px) {*/
+@media (max-width: 480px) {
+  #global {
+    width: 95%;
+    min-width: 0;
+  }
+
+  #sidebar {
+    float: none;
+    width: 100%;
+  }
+
+  #content {
+    margin-right: 0;
+  }
+}

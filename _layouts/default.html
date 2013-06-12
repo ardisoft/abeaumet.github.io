@@ -1,0 +1,34 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+
+  <head>
+    <title>beaumet.me - {{ page.title }}</title>
+
+    <meta name="description" content="I'm a french passionate developer, studying in 3rd year at Epitech Paris, France." />
+    <meta charset="UTF-8">
+
+    <link type="text/css" href="/style/design.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="global">
+      <div id="navbar">
+        <a href="/"{% if page.type == 'home' %} class="selected"{% endif %}>Home</a>
+        <a href="/posts"{% if page.type == 'posts' %} class="selected"{% endif %}>Posts</a>
+        <a href="/about"{% if page.type == 'about' %} class="selected"{% endif %}>About</a>
+        <a href="/contact"{% if page.type == 'contact' %} class="selected"{% endif %}>Contact</a>
+      </div>
+
+      <div id="content">
+        {{ content }}
+      </div>
+
+      <div id="footer">
+        Powered by <a href="http://jekyllrb.com/"</a>Jekyll</a>. Hosted on <a href="https://github.com/abeaumet/abeaumet.github.io">Github</a>.
+    </div>
+  </div>
+</body>
+</html>
