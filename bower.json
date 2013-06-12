@@ -1,8 +1,18 @@
 {
-  "name": "abeaumet.github.com",
-  "version": "0.0.0",
+  "name": "beaumet.me",
+  "version": "0.0.1",
   "dependencies": {
-    "normalize-css": "~2.1.2",
-    "requirejs": "~2.1.6"
+    "normalize-css": "latest",
+    "requirejs": "latest"
+  },
+  "install": {
+    "path": {
+      "css": "css/lib",
+      "js": "js/lib"
+    },
+    "sources": {
+      "normalize-css": [ "components/normalize-css/normalize.css" ],
+      "requirejs": [ "components/requirejs/require.js" ]
+    }
   }
 }
