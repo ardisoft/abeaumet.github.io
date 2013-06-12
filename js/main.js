@@ -1,5 +1,5 @@
 requirejs.config({
-  'baseUrl': 'js/lib'
+  'baseUrl': '/js/lib'
 });
 
 require(['domReady'], function(domReady) {
