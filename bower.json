@@ -2,6 +2,7 @@
   "name": "beaumet.me",
   "version": "0.0.1",
   "dependencies": {
+    "lunr.js": "latest",
     "normalize-css": "latest",
     "requirejs": "latest",
     "requirejs-domready": "latest"
@@ -12,6 +13,9 @@
       "js": "js/lib"
     },
     "sources": {
+      "lunr.js": [
+        "components/lunr.js/lunr.js"
+      ],
       "normalize-css": [
         "components/normalize-css/normalize.css"
       ],

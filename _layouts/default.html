@@ -14,7 +14,7 @@ layout: nil
     <link type="text/css" href="/css/lib/normalize.css" rel="stylesheet">
     <link type="text/css" href="/css/main.css" rel="stylesheet">
 
-    <script data-main="/js/main" src="/js/lib/require.js"></script>
+    <script data-main="/js/main" src="/js/libs/require.js"></script>
   </head>
 
   <body>
@@ -24,6 +24,11 @@ layout: nil
         <a href="/archive">Archive</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
+
+        <form method="get" action="/search">
+          <input type="text" name="q">
+          <button type="submit">Search</button>
+        </form>
       </div>
 
       <div id="content">
