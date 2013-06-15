@@ -1,2 +1,4 @@
 _site
-components
+components/
+js/libs/
+css/libs/

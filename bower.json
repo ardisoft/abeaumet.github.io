@@ -9,8 +9,8 @@
   },
   "install": {
     "path": {
-      "css": "css/lib",
-      "js": "js/lib"
+      "css": "css/libs",
+      "js": "js/libs"
     },
     "sources": {
       "lunr.js": [
