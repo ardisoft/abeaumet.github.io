@@ -11,7 +11,7 @@ jekyll_dev_option = "--destination #{built_dir} --limit_posts 10"
 jekyll_prod_option = "--destination #{tmp_built_dir} --lsi"
 
 ####
-# Install project dependencies
+# Install site dependencies
 task :deps do
   (system('bower', 'install') and system('bower-installer')) \
     or abort 'Failed to install dependencies!'
@@ -22,14 +22,14 @@ task :check_deps do
 end
 
 ####
-# Serve project for development
+# Serve site for development
 task :dev => [ :clean, :check_deps ] do
   system("jekyll serve --watch #{jekyll_common_option} #{jekyll_dev_option}") \
     or abort 'Failed to serve site!'
 end
 
 ####
-# Build project for production
+# Build site for production
 task :prod => [ :clean, :check_deps ] do
   system("jekyll build #{jekyll_common_option} #{jekyll_prod_option}") \
     or abort 'Failed to build site!'
@@ -37,23 +37,27 @@ task :prod => [ :clean, :check_deps ] do
   system('r.js', '-o', 'optimizer.js') \
     or abort 'Failed to optimize!'
 
+  abort 'Failed to build site!' unless File.exists? built_dir
+
   FileUtils.touch "#{built_dir}/.nojekyll"
 
-  puts 'Project built!'
+  puts 'Site built!'
+
+  FileUtils.rm_rf tmp_built_dir
 end
 
 ####
-# Clean the project (built only)
+# Clean the site (built only)
 task :clean do
   FileUtils.rm_rf [built_dir, tmp_built_dir]
 
-  puts 'Project cleaned!'
+  puts 'Site cleaned!'
 end
 
 ####
-# Purge the project (dependencies + built)
+# Purge the site (dependencies + built)
 task :purge => [ :clean ] do
   FileUtils.rm_rf ["#{source_dir}/css/libs", "#{source_dir}/js/libs", dependencies_dir]
 
-  puts 'Project purged!'
+  puts 'Site purged!'
 end

@@ -4,11 +4,9 @@ var disqus_shortname = 'beaumet';
 requirejs.config({
   baseUrl: "/js/libs",
   paths: {
-    // Easy access directories
-    "controller": "/js/controllers",
-    "module": "/js/modules",
-    "tool": "/js/tools",
-    // Some external lib
+    "controller": "../controllers",
+    "module": "../modules",
+    "tool": "../tools",
     "www/disqus": "http://" + disqus_shortname + ".disqus.com/embed.js"
   },
   shim: {
