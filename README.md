@@ -1,6 +1,6 @@
 ## To build
 
-These binaries are mandatory to build this site:
+Mandatory to build in dev:
 
     sudo gem install jekyll jekyll-tagging
     sudo npm install -g bower bower-installer
