@@ -9,21 +9,21 @@
   },
   "install": {
     "path": {
-      "css": "css/libs",
-      "js": "js/libs"
+      "css": "src/css/libs",
+      "js": "src/js/libs"
     },
     "sources": {
       "lunr.js": [
-        "components/lunr.js/lunr.js"
+        "deps/lunr.js/lunr.js"
       ],
       "normalize-css": [
-        "components/normalize-css/normalize.css"
+        "deps/normalize-css/normalize.css"
       ],
       "requirejs": [
-        "components/requirejs/require.js"
+        "deps/requirejs/require.js"
       ],
       "requirejs-domready": [
-        "components/requirejs-domready/domReady.js"
+        "deps/requirejs-domready/domReady.js"
       ]
     }
   }

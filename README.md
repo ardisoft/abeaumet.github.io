@@ -1,14 +1,10 @@
 ## To build
 
-Mandatory to build in dev:
+Mandatory:
 
     sudo gem install jekyll jekyll-tagging
-    sudo npm install -g bower bower-installer
+    sudo npm install -g bower bower-installer requirejs
 
-Mandatory to build in prod:
-
-    # node
-
-Optionals dependencies:
+Optional:
 
     sudo gem install gsl

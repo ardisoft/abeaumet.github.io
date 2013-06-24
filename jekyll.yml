@@ -2,7 +2,3 @@ permalink: pretty
 
 tag_page_layout: tag
 tag_page_dir: tag
-
-exclude:
-  - bower.json
-  - components

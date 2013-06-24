@@ -8,8 +8,8 @@ requirejs.config({
     "controller": "/js/controllers",
     "module": "/js/modules",
     "tool": "/js/tools",
-    // Some lib
-    "disqus": "http://" + disqus_shortname + ".disqus.com/embed.js"
+    // Some external lib
+    "www/disqus": "http://" + disqus_shortname + ".disqus.com/embed.js"
   },
   shim: {
     "lunr": { exports: "lunr" }

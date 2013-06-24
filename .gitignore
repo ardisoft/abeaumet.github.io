@@ -1,4 +1,5 @@
-_site/
-components/
-js/libs/
-css/libs/
+src/css/libs/
+src/js/libs/
+deps/
+www/
+www_/
