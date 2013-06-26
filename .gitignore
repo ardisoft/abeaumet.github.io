@@ -1,5 +1,4 @@
 src/css/libs/
 src/js/libs/
 deps/
-www/
-www_/
+www*/
