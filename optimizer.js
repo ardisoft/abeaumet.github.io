@@ -1,9 +1,11 @@
 ({
-  baseUrl: "/js/libs",
+  baseUrl: "js/libs",
+
   paths: {
     "controller": "../controllers",
     "module": "../modules",
     "tool": "../tools",
+    "www/disqus": "http://beaumet.disqus.com/embed.js"
   },
   shim: {
     "lunr": { exports: "lunr" }
@@ -15,7 +17,7 @@
   dir: "www",
 
   modules: [{
-    name: "../main"
+      name: "../main"
   }],
 
   optimize: "uglify2",

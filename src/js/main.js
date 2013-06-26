@@ -3,6 +3,7 @@ var disqus_shortname = 'beaumet';
 
 requirejs.config({
   baseUrl: "/js/libs",
+
   paths: {
     "controller": "../controllers",
     "module": "../modules",
