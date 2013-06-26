@@ -5,7 +5,7 @@
     "controller": "../controllers",
     "module": "../modules",
     "tool": "../tools",
-    "www/disqus": "http://beaumet.disqus.com/embed.js"
+    "www/disqus": "http://beaumet.disqus.com/embed"
   },
   shim: {
     "lunr": { exports: "lunr" }
