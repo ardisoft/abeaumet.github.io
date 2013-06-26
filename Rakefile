@@ -3,12 +3,12 @@
 
 dependencies_dir = 'deps'
 source_dir = 'src'
-built_dir = 'www'
-tmp_built_dir = "#{built_dir}_"
+build_dir = 'www'
+tmp_build_dir = "#{build_dir}_"
 
-jekyll_common_option = "--drafts --config jekyll.yml --source #{source_dir}"
-jekyll_dev_option = "--destination #{built_dir} --limit_posts 10"
-jekyll_prod_option = "--destination #{tmp_built_dir} --lsi"
+jekyll_common_option = "--config jekyll.yml --source #{source_dir}"
+jekyll_dev_option = "--drafts --destination #{build_dir} --limit_posts 10"
+jekyll_prod_option = "--destination #{tmp_build_dir} --lsi"
 
 ####
 # Install site dependencies
@@ -18,52 +18,83 @@ task :deps do
     or abort 'Failed to install dependencies!'
 end
 
-desc 'Install dependencies only if needed'
+desc 'Install dependencies (only if needed)'
 task :check_deps do
   Rake::Task[ :deps ].invoke unless File.exists? dependencies_dir
 end
 
 ####
-# Serve site for development
-desc 'Build and serve site for development purpose'
-task :dev => [ :clean, :check_deps ] do
-  system("jekyll serve --watch #{jekyll_common_option} #{jekyll_dev_option}") \
-    or abort 'Failed to serve site!'
+# Build site
+namespace :build do
+  desc 'Build (development)'
+  task :dev => [ 'clean:build', :check_deps ] do
+    system("jekyll build #{jekyll_common_option} #{jekyll_dev_option}") \
+      or abort 'Failed to serve!'
+  end
+
+  desc 'Build (production)'
+  task :prod => [ 'clean:build', :check_deps ] do
+    system("jekyll build #{jekyll_common_option} #{jekyll_prod_option}") \
+      or abort 'Failed to build!'
+
+    system('r.js', '-o', 'optimizer.js') \
+      or abort 'Failed to optimize!'
+
+    File.exists? build_dir \
+      or abort 'Failed to build!'
+
+    FileUtils.touch "#{build_dir}/.nojekyll"
+    FileUtils.rm_rf tmp_build_dir
+
+    puts 'Built!'
+  end
+end
+task :build => 'build:dev'
+
+####
+# Build and Serve site
+namespace :serve do
+  desc 'Build and serve (development)'
+  task :dev do
+    system("jekyll serve --watch #{jekyll_common_option} #{jekyll_dev_option}") \
+      or abort 'Failed to serve!'
+  end
+
+  desc 'Build and serve (production)'
+  task :prod => 'build:prod' do
+    require 'webrick'
+    server = WEBrick::HTTPServer.new :Port => 4000
+    server.mount '/', WEBrick::HTTPServlet::FileHandler, build_dir
+    trap('INT') { server.stop }
+    server.start
+  end
+end
+task :serve => 'serve:dev'
+
+####
+# Build and Deploy site (production)
+desc 'Build and deploy (production)'
+task :deploy => 'build:prod' do
+  # TO DO
+  puts 'Deploying in production...'
 end
 
 ####
-# Build site for production
-desc 'Build and optimize site for production'
-task :prod => [ :clean, :check_deps ] do
-  system("jekyll build #{jekyll_common_option} #{jekyll_prod_option}") \
-    or abort 'Failed to build site!'
+# Clean project
+namespace :clean do
+  desc 'Clean build'
+  task :build do
+    FileUtils.rm_rf [build_dir, tmp_build_dir]
+    puts 'Build cleaned!'
+  end
 
-  system('r.js', '-o', 'optimizer.js') \
-    or abort 'Failed to optimize!'
+  desc 'Clean dependencies'
+  task :deps do
+    FileUtils.rm_rf [dependencies_dir, "#{source_dir}/css/libs", "#{source_dir}/js/libs"]
+    puts 'Deps cleaned!'
+  end
 
-  abort 'Failed to build site!' unless File.exists? built_dir
-
-  FileUtils.touch "#{built_dir}/.nojekyll"
-
-  puts 'Site built!'
-
-  FileUtils.rm_rf tmp_built_dir
+  desc 'Clean the whole project'
+  task :all => ['clean:build', 'clean:deps']
 end
-
-####
-# Clean the site (built only)
-desc 'Remove the generated site'
-task :clean do
-  FileUtils.rm_rf [built_dir, tmp_built_dir]
-
-  puts 'Site cleaned!'
-end
-
-####
-# Purge the site (dependencies + built)
-desc 'Remove the generated site and the dependencies'
-task :purge => [ :clean ] do
-  FileUtils.rm_rf ["#{source_dir}/css/libs", "#{source_dir}/js/libs", dependencies_dir]
-
-  puts 'Site purged!'
-end
+task :clean => 'clean:build'

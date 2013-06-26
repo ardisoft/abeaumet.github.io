@@ -17,7 +17,7 @@
   dir: "www",
 
   modules: [{
-      name: "../main"
+    name: "../main"
   }],
 
   optimize: "uglify2",
