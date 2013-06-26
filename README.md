@@ -1,3 +1,5 @@
+This is my personal website source.
+
 ## To build
 
 Mandatory:
@@ -7,4 +9,4 @@ Mandatory:
 
 Optional:
 
-    sudo gem install gsl
+    sudo gem install gsl webrick
