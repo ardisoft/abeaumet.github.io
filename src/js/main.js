@@ -18,6 +18,9 @@ requirejs.config({
 require(['domReady'], function(domReady) {
   domReady(function() {
 
+    // In all case, enable JS search engine
+    document.getElementById('search-form').style.display = 'block';
+
     // If current page is /search
     if (/^\/search/.test(window.location.pathname)) {
       require(['controller/search'], function(controller) {
