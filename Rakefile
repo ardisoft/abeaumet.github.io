@@ -55,7 +55,7 @@ task :build => 'build:dev'
 # Build and Serve site
 namespace :serve do
   desc 'Build and serve (development)'
-  task :dev do
+  task :dev => [ 'clean:build', :check_deps ] do
     system("jekyll serve --watch #{jekyll_common_option} #{jekyll_dev_option}") \
       or abort 'Failed to serve!'
   end
