@@ -23,14 +23,14 @@ require(['domReady'], function(domReady) {
 
     // If current page is /search
     if (/^\/search/.test(window.location.pathname)) {
-      require(['controller/search'], function(controller) {
-        controller.postRendering();
+      require(['post-rendering/search'], function(search) {
+        search.postRendering();
       });
     }
     // If current page is a post
     else if (/^\/[0-9]+/.test(window.location.pathname)) {
-      require(['controller/post'], function(controller) {
-        controller.postRendering();
+      require(['post-rendering/post'], function(post) {
+        post.postRendering();
       });
     }
 
