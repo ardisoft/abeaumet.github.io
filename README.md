@@ -1,6 +1,6 @@
 This is my personal website source.
 
-## To build
+### To build
 
 Mandatory:
 
@@ -10,3 +10,7 @@ Mandatory:
 Optional:
 
     sudo gem install gsl webrick
+
+### License
+
+The posts have a specific license, see [here](https://github.com/abeaumet/abeaumet.github.io/blob/source/src/_posts/LICENSE.md).
