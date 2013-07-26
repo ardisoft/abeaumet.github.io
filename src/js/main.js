@@ -19,7 +19,7 @@ require(['domReady'], function(domReady) {
   domReady(function() {
 
     // In all case, enable JS search engine
-    document.getElementById('search-form').style.display = 'block';
+    document.getElementById('search-form').style.display = 'inline';
 
     // If current page is /search
     if (/^\/search/.test(window.location.pathname)) {

@@ -18,15 +18,36 @@ layout: nil
   <body>
     <div id="global">
       <div id="navbar">
-        <a href="/">Home</a>
-        <a href="/archive">Archive</a>
+        <a href="/">Aymeric Beaumet</a>
         <a href="/about">About</a>
+        <a href="/archive">Archive</a>
         <a href="/contact">Contact</a>
 
-        <form method="get" action="/search" id="search-form" style="display:none;">
-          <input type="text" name="q">
-          <button type="submit">Search</button>
-        </form>
+        <div>
+          <form method="get" action="/search" id="search-form" style="display:none;">
+            <input type="text" placeholder="Search" name="q">
+            <button type="submit"></button>
+          </form>
+          <a href="/rss"><img src="/images/rss.png" alt="RSS icon" title="RSS feeds"></a>
+        </div>
+      </div>
+
+      <div id="informations">
+        <p>My name is Aymeric Beaumet,</p>
+        <p>I'm a 21 years old software engineer from Paris.</p>
+        <p>I'm currently studying at Kent University in Canterbury</p>
+      </div>
+
+      <div id="details">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        <h4>You can stalk me here</h4>
+        <hr>
+        <div>
+          <a href="https://github.com/abeaumet"><img src="/images/github.png" alt="Stack Overflow icon" title="Stack Overflow"></a>
+          <a href="http://stackoverflow.com/users/1071486/abeaumet"><img src="/images/stackoverflow.png" alt="Stack Overflow icon" title="Stack Overflow"></a>
+          <a href="http://fr.linkedin.com/in/abeaumet"><img src="/images/linkedin.png" alt="Stack Overflow icon" title="Stack Overflow"></a>
+        </div>
       </div>
 
       <div id="content">

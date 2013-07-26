@@ -1,16 +1,102 @@
 @import url("libs/normalize.css");
 
+/* Global page style */
+
+body {
+  background-image: url("/images/fishbone-pattern.png");
+}
+
 #global {
   margin: 0 auto;
   width: 80%;
-  min-width: 600px;
+  min-width: 700px;
   max-width: 950px;
 }
 
-#navbar > a.selected {
+/* Navigation bar */
+
+#navbar {
+  padding: 20px 35px;
+}
+
+#navbar a {
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  border-bottom: 3px solid #000000;
+}
+
+#navbar a.selected {
   background-color: black;
   color: white;
 }
+
+#navbar div {
+  float: right;
+}
+
+#search-form button {
+  background-color: green;
+  background-image: url("/images/search.png");
+  width: 24px;
+  height: 24px;
+}
+
+/* Informations */
+
+#informations {
+  background-color: green;
+  padding-top: 50px;
+  padding-left: 280px;
+  padding-bottom: 80px;
+}
+
+#informations p {
+  text-transform: uppercase;
+  font-size: 0.95em;
+}
+
+/* Details */
+
+#details {
+  margin-top: -70px;
+  float: left;
+  width: 200px;
+  background-image: url("/images/me.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding: 20px;
+  padding-top: 160px;
+}
+
+#details p {
+  text-align: justify;
+  font-size: 0.7em;
+  text-indent: 3em;
+}
+
+#details h4 {
+  margin-top: 40px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+#details img {
+  margin-right: 20px;
+}
+
+/* Content */
+
+#content {
+  margin-top: -70px;
+  margin-left: 240px;
+  padding: 40px;
+}
+
+/*************/
 
 #post {
   text-align: justify;
