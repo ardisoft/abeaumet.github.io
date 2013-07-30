@@ -1,9 +1,41 @@
 ---
-layout: default
+layout: full_page
 title: Home
 lang: en
 ---
 
-<h1>Home</h1>
+{% for post in paginator.posts %}
+<div class="post">
+  <a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
+  <h4>{{ post.date }}</h4>
+  <hr>
+  <div>{{ post.content }}</div>
+  <hr>
+  <a href="{{ post.url }}#disqus_thread"><img src="/images/comment.png">Comment</a>
+  <img src="/images/tag.png">iOS, Software</a>
+<a href="{{ post.url }}"><img src="/images/permalink.png">Permalink</a>
+</div>
+{% endfor %}
 
-This is the home page.
+<div class="pagination">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          {% if paginator.previous_page %}
+          <a href="/">&laquo; Beginning</a>
+          <a href="/{% if paginator.previous_page > 1 %}page/{{ paginator.previous_page }} {% endif %}">Previous</a>
+          {% endif %}
+        </td>
+        <td>
+          Page: {{ paginator.page }} / {{ paginator.total_pages }}
+        </td>
+        <td>
+          {% if paginator.next_page %}
+          <a href="/page/{{ paginator.next_page }}">Next</a>
+          <a href="/page/{{ paginator.total_pages }}">End &raquo; </a>
+          {% endif %}
+        </td>
+      </tbody>
+    </table>
+  </div>

@@ -25,7 +25,7 @@ body {
 }
 
 #navbar a:hover {
-  border-bottom: 3px solid #000000;
+  border-bottom: 2px solid #000000;
 }
 
 #navbar a.selected {
@@ -50,7 +50,7 @@ body {
   background-color: green;
   padding-top: 50px;
   padding-left: 280px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 }
 
 #informations p {
@@ -63,12 +63,11 @@ body {
 #details {
   margin-top: -70px;
   float: left;
-  width: 200px;
+  width: 210px;
   background-image: url("/images/me.png");
   background-repeat: no-repeat;
   background-position: center top;
-  padding: 20px;
-  padding-top: 160px;
+  padding: 160px 20px 0;
 }
 
 #details p {
@@ -92,9 +91,37 @@ body {
 
 #content {
   margin-top: -70px;
-  margin-left: 240px;
-  padding: 40px;
+  margin-left: 270px;
 }
+
+#content > div {
+  margin-bottom: 35px;
+  padding: 0 40px;
+  background-color: #FFFFFF;
+}
+
+#content > div:last-child {
+  margin-bottom: 0;
+}
+
+.pagination table {
+  width: 100%;
+}
+
+.pagination td {
+  width: 33.3%;
+  text-align: center;
+}
+
+.pagination td:nth-child(1) {
+  text-align: right;
+}
+
+.pagination td:nth-child(3) {
+  text-align: left;
+}
+
+.paginationkkkkkk
 
 /*************/
 
@@ -105,6 +132,8 @@ body {
 #footer {
   clear: both;
   text-align: center;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 

@@ -25,13 +25,11 @@ define(['tool/getQueryString', 'module/searchEngine'], function(getQueryString, 
     return '<ul>' + ret.join('') + '</ul>';
   }
 
-  return {
-    postRendering: function() {
+  return (function() {
       var query = getQueryString('q');
       var results = searchEngine.search(query, posts);
       var formattedResults = getformattedResults(results);
 
       document.getElementById('results').innerHTML = formattedResults;
-    }
-  }
+  });
 });

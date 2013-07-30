@@ -1,38 +1,36 @@
 // Disq.us configuration
-var disqus_shortname = 'beaumet';
+var disqus_shortname = 'abeaumet';
 
 requirejs.config({
-  baseUrl: "/js/libs",
+    baseUrl: '/js/libs',
 
-  paths: {
-    "controller": "../controllers",
-    "module": "../modules",
-    "tool": "../tools",
-    "www/disqus": "http://" + disqus_shortname + ".disqus.com/embed"
-  },
-  shim: {
-    "lunr": { exports: "lunr" }
-  }
+    paths: {
+        'controller': '../controllers',
+        'module': '../modules',
+        'tool': '../tools',
+        'www/disqus': '//go.disqus.com/embed',
+        'www/disqus_count': '//go.disqus.com/count',
+    },
+    shim: {
+        'lunr': { exports: 'lunr' }
+    }
 });
 
 require(['domReady'], function(domReady) {
-  domReady(function() {
+    domReady(function() {
 
-    // In all case, enable JS search engine
-    document.getElementById('search-form').style.display = 'inline';
+        // In all cases, display JavaScript based search engine
+        document.getElementById('search-form').style.display = 'inline';
 
-    // If current page is /search
-    if (/^\/search/.test(window.location.pathname)) {
-      require(['post-rendering/search'], function(search) {
-        search.postRendering();
-      });
-    }
-    // If current page is a post
-    else if (/^\/[0-9]+/.test(window.location.pathname)) {
-      require(['post-rendering/post'], function(post) {
-        post.postRendering();
-      });
-    }
+        // If current page is home
+        if (/^\/(?:page\/[0-9]+\/)?(?:index.html)?$/.test(window.location.pathname))
+            require(['controller/homepage'], function(controller) { controller(); });
+        // If current page is /search
+        else if (/^\/search/.test(window.location.pathname))
+            require(['controller/search'], function(controller) { controller(); });
+        // If current page is a post
+        else if (document.getElementById('disqus_thread') != null)
+            require(['controller/post'], function(controller) { controller(); });
 
-  });
+    });
 });

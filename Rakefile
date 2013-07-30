@@ -43,7 +43,6 @@ namespace :build do
     File.exists? build_dir \
       or abort 'Failed to build!'
 
-    FileUtils.touch "#{build_dir}/.nojekyll"
     FileUtils.rm_rf tmp_build_dir
 
     puts 'Built!'
