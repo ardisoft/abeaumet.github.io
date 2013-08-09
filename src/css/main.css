@@ -17,10 +17,11 @@ body {
 
 #navbar {
   padding: 20px 35px;
+  background-color: #ffffff;
 }
 
 #navbar a {
-  margin: 0 5px;
+  margin: 0 10px;
   text-decoration: none;
 }
 
@@ -96,8 +97,9 @@ body {
 
 #content > div {
   margin-bottom: 35px;
-  padding: 0 40px;
-  background-color: #FFFFFF;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  border: 1px solid #d6d6d6;
 }
 
 #content > div:last-child {
@@ -121,13 +123,27 @@ body {
   text-align: left;
 }
 
-.paginationkkkkkk
-
 /*************/
 
-#post {
+div.post {
   text-align: justify;
 }
+
+div.post a {
+  text-decoration: none;
+}
+
+.post_informations img {
+  vertical-align: middle;
+  margin-left: 15px;
+  margin-right: 2px;
+}
+
+.post_informations img:first-child {
+  margin-left: 0;
+}
+
+/*************/
 
 #footer {
   clear: both;
@@ -136,8 +152,7 @@ body {
   padding: 10px;
 }
 
-
 /*trick to see div borders*/
-div {
-  border: 1px solid #000000;
-}
+/*div {*/
+  /*border: 1px solid #000000;*/
+/*}*/
