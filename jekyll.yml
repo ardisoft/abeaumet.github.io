@@ -9,6 +9,3 @@ tag_page_dir: tag
 
 include:
   - .nojekyll
-
-exclude:
-  - LICENSE.md
