@@ -14,7 +14,7 @@ jekyll_common_option = "--config jekyll.yml --source #{source_dir}"
 jekyll_dev_option = "--drafts --destination #{build_dir} --limit_posts 10"
 jekyll_prod_option = "--destination #{tmp_build_dir} --lsi"
 
-sass_common_option = "--no-cache #{sass_input_dir}:#{sass_output_dir}"
+sass_common_option = "#{sass_input_dir}:#{sass_output_dir} --no-cache"
 
 
 ################
@@ -57,7 +57,7 @@ end
 
 desc 'Build and serve (production)'
 task :prod => ['clean:build', :smart_deps] do
-  system("sass #{sass_common_option}") \
+  system("sass --update #{sass_common_option}") \
     or abort 'Failed to compile SASS files!'
 
   system("jekyll build #{jekyll_common_option} #{jekyll_prod_option}") \
