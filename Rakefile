@@ -4,8 +4,6 @@
 
 dependencies_dir = 'deps'
 source_dir = 'src'
-sass_input_dir = "#{source_dir}/_scss"
-sass_output_dir = "#{source_dir}/css"
 libs_dir = "#{source_dir}/libs"
 build_dir = 'www'
 tmp_build_dir = "#{build_dir}_"
@@ -14,6 +12,8 @@ jekyll_common_option = "--config jekyll.yml --source #{source_dir}"
 jekyll_dev_option = "--drafts --destination #{build_dir} --limit_posts 10"
 jekyll_prod_option = "--destination #{tmp_build_dir} --lsi"
 
+sass_input_dir = "#{source_dir}/_scss"
+sass_output_dir = "#{source_dir}/css"
 sass_common_option = "#{sass_input_dir}:#{sass_output_dir} --no-cache"
 
 
