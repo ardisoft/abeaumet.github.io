@@ -19,7 +19,7 @@ task :deps do
 end
 
 desc 'Install dependencies (only if needed)'
-task :check_deps do
+task :smart_deps do
   Rake::Task[ :deps ].invoke unless File.exists? dependencies_dir
 end
 
@@ -27,13 +27,13 @@ end
 # Build site
 namespace :build do
   desc 'Build (development)'
-  task :dev => [ 'clean:build', :check_deps ] do
+  task :dev => [ 'clean:build', :smart_deps ] do
     system("jekyll build #{jekyll_common_option} #{jekyll_dev_option}") \
       or abort 'Failed to serve!'
   end
 
   desc 'Build (production)'
-  task :prod => [ 'clean:build', :check_deps ] do
+  task :prod => [ 'clean:build', :smart_deps ] do
     system("jekyll build #{jekyll_common_option} #{jekyll_prod_option}") \
       or abort 'Failed to build!'
 
@@ -54,7 +54,7 @@ task :build => 'build:dev'
 # Build and Serve site
 namespace :serve do
   desc 'Build and serve (development)'
-  task :dev => [ 'clean:build', :check_deps ] do
+  task :dev => [ 'clean:build', :smart_deps ] do
     system("jekyll serve --watch #{jekyll_common_option} #{jekyll_dev_option}") \
       or abort 'Failed to serve!'
   end
