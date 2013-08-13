@@ -5,9 +5,9 @@ requirejs.config({
     baseUrl: '/libs/js',
 
     paths: {
-        'controller': '/js/controllers',
-        'module': '/js/modules',
-        'tool': '/js/tools',
+        'controller': '../../js/controllers',
+        'module': '../../js/modules',
+        'tool': '../../js/tools',
         'www/disqus': '//go.disqus.com/embed',
         'www/disqus_count': '//go.disqus.com/count',
     },
