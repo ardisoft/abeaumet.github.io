@@ -14,7 +14,7 @@ jekyll_prod_option = "--destination #{tmp_build_dir} --lsi"
 
 sass_input_dir = "#{source_dir}/_scss"
 sass_output_dir = "#{source_dir}/css"
-sass_common_option = "#{sass_input_dir}:#{sass_output_dir} --no-cache"
+sass_common_option = "--no-cache"
 
 
 ################
@@ -40,7 +40,7 @@ end
 desc 'Build and serve (development)'
 task :dev => ['clean:build', :smart_deps] do
   jekyllPid = Process.spawn("jekyll serve --watch #{jekyll_common_option} #{jekyll_dev_option}")
-  sassPid = Process.spawn("sass --watch #{sass_common_option}")
+  sassPid = Process.spawn("sass #{sass_common_option} --watch #{sass_input_dir}:#{sass_output_dir}")
 
   trap("INT") {
     [jekyllPid, sassPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
@@ -57,7 +57,7 @@ end
 
 desc 'Build and serve (production)'
 task :prod => ['clean:build', :smart_deps] do
-  system("sass --update #{sass_common_option}") \
+  system("sass #{sass_common_option} --update #{sass_input_dir}:#{sass_output_dir}") \
     or abort 'Failed to compile SASS files!'
 
   system("jekyll build #{jekyll_common_option} #{jekyll_prod_option}") \
