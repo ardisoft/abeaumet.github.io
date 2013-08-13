@@ -2,12 +2,12 @@
 var disqus_shortname = 'abeaumet';
 
 requirejs.config({
-    baseUrl: '/js/libs',
+    baseUrl: '/libs/js',
 
     paths: {
-        'controller': '../controllers',
-        'module': '../modules',
-        'tool': '../tools',
+        'controller': '/js/controllers',
+        'module': '/js/modules',
+        'tool': '/js/tools',
         'www/disqus': '//go.disqus.com/embed',
         'www/disqus_count': '//go.disqus.com/count',
     },

@@ -1,4 +1,4 @@
-src/css/libs/
-src/js/libs/
 deps/
+src/libs/
+src/css/
 www/
