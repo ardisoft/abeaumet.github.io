@@ -1,11 +1,12 @@
 ({
-  baseUrl: "js/libs",
+  baseUrl: "libs/js",
 
   paths: {
-    "controller": "../controllers",
-    "module": "../modules",
-    "tool": "../tools",
-    "www/disqus": "http://beaumet.disqus.com/embed"
+    "controller": "../../js/controllers",
+    "module": "../../js/modules",
+    "tool": "../../js/tools",
+    'www/disqus': '//go.disqus.com/embed',
+    'www/disqus_count': '//go.disqus.com/count',
   },
   shim: {
     "lunr": { exports: "lunr" }
@@ -17,7 +18,7 @@
   dir: "www",
 
   modules: [{
-    name: "../main"
+    name: "../../js/main"
   }],
 
   optimize: "uglify2",
