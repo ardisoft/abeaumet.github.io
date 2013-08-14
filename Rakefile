@@ -2,19 +2,25 @@
 # Configuration #
 #################
 
-dependencies_dir = "deps"
 source_dir = "src"
-libs_dir = "#{source_dir}/libs"
 build_dir = "www"
 tmp_build_dir = "#{build_dir}_"
 
+# Jekyll
 jekyll_common_option = "--config jekyll.yml --source #{source_dir}"
 jekyll_dev_option = "--drafts --destination #{build_dir} --limit_posts 10"
 jekyll_prod_option = "--destination #{tmp_build_dir} --lsi"
 
+# Bower
+dependencies_dir = "deps"
+libs_dir = "#{source_dir}/libs"
+
+# Sass
 sass_input_dir = "#{source_dir}/_scss"
 sass_output_dir = "#{source_dir}/css"
-sass_common_option = "--no-cache"
+sass_common_option = "#{sass_input_dir}:#{sass_output_dir} --no-cache"
+sass_dev_option = "--style nested"
+sass_prod_option = "--style compressed"
 
 
 ################
@@ -39,15 +45,20 @@ end
 
 desc "Build and serve (development)"
 task :dev => ["clean:build", :smart_deps] do
-  jekyllPid = Process.spawn("jekyll serve --watch #{jekyll_common_option} #{jekyll_dev_option}")
-  sassPid = Process.spawn("sass --watch #{sass_input_dir}:#{sass_output_dir} #{sass_common_option}")
+  # Create Sass output directory
+  FileUtils.mkdir_p sass_output_dir
+
+  pids = [
+    Process.spawn("jekyll serve --watch #{jekyll_common_option} #{jekyll_dev_option}"),
+    Process.spawn("sass --watch #{sass_common_option} #{sass_dev_option}"),
+  ]
 
   trap("INT") {
-    [jekyllPid, sassPid].each { |pid| Process.kill(INT, pid) rescue Errno::ESRCH }
+    pids.each { |pid| Process.kill(INT, pid) rescue Errno::ESRCH }
     exit 0
   }
 
-  [jekyllPid, sassPid].each { |pid| Process.wait(pid) }
+  pids.each { |pid| Process.wait(pid) }
 end
 
 
@@ -57,7 +68,10 @@ end
 
 desc "Build and serve (production)"
 task :prod => ["clean:build", :smart_deps] do
-  system("sass --update #{sass_input_dir}:#{sass_output_dir} #{sass_common_option}") \
+  # Create Sass output directory
+  FileUtils.mkdir_p sass_output_dir
+
+  system("sass --update #{sass_common_option} #{sass_prod_option}") \
     or abort "Failed to compile SASS files!"
 
   system("jekyll build #{jekyll_common_option} #{jekyll_prod_option}") \
