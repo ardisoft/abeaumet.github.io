@@ -17,7 +17,7 @@
         "bower_components/normalize-css/normalize.css"
       ],
       "unsemantic": [
-        "bower_components/unsemantic/assets/stylesheets/unsemantic-grid-responsive-rtl.css"
+        "bower_components/unsemantic/assets/stylesheets/unsemantic-grid-responsive.css"
       ],
       "lunr.js": [
         "bower_components/lunr.js/lunr.js"
