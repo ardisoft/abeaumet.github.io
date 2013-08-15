@@ -1,15 +1,14 @@
 This is my personal website source.
 
+### Notes
+
+- The GSL library (<= 1.15) must already be installed before Ruby/GSL can be installed.
+
 ### To build
 
 Mandatory:
 
-    sudo gem install jekyll jekyll-tagging
     sudo npm install -g bower bower-installer requirejs
-
-Optional:
-
-    sudo gem install gsl webrick
 
 ### License
 

@@ -29,8 +29,9 @@ sass_prod_option = "--style compressed"
 
 desc "Force dependencies installation"
 task :deps do
-  (system("bower-installer") and FileUtils.rm_rf dependencies_dir) \
-    or abort "Failed to install dependencies!"
+  (system("bundle install") and
+   system("bower-installer") and
+   FileUtils.rm_rf dependencies_dir) or abort "Failed to install dependencies!"
 end
 
 desc "Install dependencies (only if needed)"

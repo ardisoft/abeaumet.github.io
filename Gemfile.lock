@@ -1,0 +1,59 @@
+GIT
+  remote: https://github.com/pakerfeldt/jekyll-tagging.git
+  revision: 1c39dba4a57c5e19a012d0eed17d99c3ac928b95
+  specs:
+    jekyll-tagging (0.4.0)
+      ruby-nuggets
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    classifier (1.3.3)
+      fast-stemmer (>= 1.0.0)
+    colorator (0.1)
+    commander (4.1.5)
+      highline (~> 1.6.11)
+    directory_watcher (1.4.1)
+    fast-stemmer (1.0.2)
+    gsl (1.15.3)
+      narray (>= 0.5.9)
+    highline (1.6.19)
+    jekyll (1.1.2)
+      classifier (~> 1.3)
+      colorator (~> 0.1)
+      commander (~> 4.1.3)
+      directory_watcher (~> 1.4.1)
+      kramdown (~> 1.0.2)
+      liquid (~> 2.5.1)
+      maruku (~> 0.5)
+      pygments.rb (~> 0.5.0)
+      redcarpet (~> 2.2.2)
+      safe_yaml (~> 0.7.0)
+    kramdown (1.0.2)
+    liquid (2.5.1)
+    maruku (0.6.1)
+      syntax (>= 1.0.0)
+    narray (0.6.0.8)
+    posix-spawn (0.3.6)
+    pygments.rb (0.5.2)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
+    rb-fsevent (0.9.3)
+    redcarpet (2.2.2)
+    ruby-nuggets (0.9.5)
+    safe_yaml (0.7.1)
+    sass (3.2.10)
+    syntax (1.0.0)
+    webrick (1.3.1)
+    yajl-ruby (1.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  gsl
+  jekyll
+  jekyll-tagging!
+  rb-fsevent
+  sass
+  webrick
