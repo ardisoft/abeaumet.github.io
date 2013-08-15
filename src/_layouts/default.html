@@ -15,14 +15,14 @@ layout: nil
   </head>
 
   <body>
-    <div>
-      <div>
+    <div class="white">
+      <div class="mw960p center pa2 pl3 pr0">
         <a href="/">Aymeric Beaumet</a>
         <a href="/about">About</a>
         <a href="/archive">Archive</a>
         <a href="/contact">Contact</a>
 
-        <div>
+        <div class="right">
           <form method="get" action="/search" id="search-form" style="display:none;">
             <input type="text" placeholder="Search" name="q">
             <button type="submit"></button>
@@ -30,14 +30,14 @@ layout: nil
           <a href="/rss"><img src="/images/rss.png" alt="RSS icon" title="RSS feeds"></a>
         </div>
       </div>
-
-      <div>
-        {{ content }}
-      </div>
-
-      <div>
-        Powered by <a href="http://jekyllrb.com/"</a>Jekyll</a>. Hosted on <a href="https://github.com/abeaumet/abeaumet.github.io">Github</a>.
-      </div>
     </div>
-  </body>
+
+    <div>
+      {{ content }}
+    </div>
+
+    <div class="mw960p center txtcenter mt2 pa2 white borderg mb1 clear">
+      Thanks to <a href="http://charline-bestard.com/">Charline Bestard</a> for the design. Powered by <a href="http://jekyllrb.com/"</a>Jekyll</a>. Hosted on <a href="https://github.com/abeaumet/abeaumet.github.io">Github</a>.
+  </div>
+</body>
 </html>

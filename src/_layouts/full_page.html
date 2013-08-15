@@ -2,24 +2,29 @@
 layout: default
 ---
 
-<div>
-  <p>My name is Aymeric Beaumet,</p>
-  <p>I'm a 21 years old software engineer from Paris.</p>
-  <p>I'm currently studying at Kent University in Canterbury</p>
-</div>
-
-<div>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-  <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-  <h4>You can stalk me here</h4>
-  <hr>
-  <div>
-    <a href="https://github.com/abeaumet"><img src="/images/github.png" alt="Github icon" title="Github"></a>
-    <a href="http://stackoverflow.com/users/1071486/abeaumet"><img src="/images/stackoverflow.png" alt="Stack Overflow icon" title="Stack Overflow"></a>
-    <a href="http://fr.linkedin.com/in/abeaumet"><img src="/images/linkedin.png" alt="LinkedIn icon" title="LinkedIn"></a>
+<div class="green-gradient">
+  <div class="mw960p center pl34 up pt4 pb10">
+    <p>My name is Aymeric Beaumet,</p>
+    <p>I'm a 21 years old software engineer from Paris.</p>
+    <p>I'm currently studying at Kent University in Canterbury</p>
   </div>
 </div>
 
-<div>
-  {{ content }}
+<div class="mw960p center mtm6">
+  <div class="left w300p pa3 pt0 txtjustify">
+    <img src="/images/me.png" alt="Me!" title="Smile!" class="bl center">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+    <h4>You can stalk me here</h4>
+    <hr>
+    <div>
+      <a href="https://github.com/abeaumet"><img src="/images/github.png" alt="Github icon" title="Github"></a>
+      <a href="http://stackoverflow.com/users/1071486/abeaumet"><img src="/images/stackoverflow.png" alt="Stack Overflow icon" title="Stack Overflow"></a>
+      <a href="http://fr.linkedin.com/in/abeaumet"><img src="/images/linkedin.png" alt="LinkedIn icon" title="LinkedIn"></a>
+    </div>
+  </div>
+
+  <div class="mod">
+    {{ content }}
+  </div>
 </div>
