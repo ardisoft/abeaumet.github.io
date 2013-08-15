@@ -12,7 +12,7 @@ jekyll_dev_option = "--drafts --destination #{build_dir} --limit_posts 10"
 jekyll_prod_option = "--destination #{tmp_build_dir} --lsi"
 
 # Bower
-dependencies_dir = "deps"
+dependencies_dir = "bower_components"
 libs_dir = "#{source_dir}/libs"
 
 # Sass

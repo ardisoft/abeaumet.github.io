@@ -1,4 +1,4 @@
-deps/
+bower_components/
 src/libs/
 src/css/
 www*/

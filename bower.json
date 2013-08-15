@@ -14,16 +14,16 @@
     },
     "sources": {
       "lunr.js": [
-        "deps/lunr.js/lunr.js"
+        "bower_components/lunr.js/lunr.js"
       ],
       "normalize-css": [
-        "deps/normalize-css/normalize.css"
+        "bower_components/normalize-css/normalize.css"
       ],
       "requirejs": [
-        "deps/requirejs/require.js"
+        "bower_components/requirejs/require.js"
       ],
       "requirejs-domready": [
-        "deps/requirejs-domready/domReady.js"
+        "bower_components/requirejs-domready/domReady.js"
       ]
     }
   }
