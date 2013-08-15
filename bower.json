@@ -1,6 +1,5 @@
 {
   "name": "beaumet.me",
-  "version": "0.0.1",
   "dependencies": {
     "lunr.js": "latest",
     "normalize-css": "latest",
