@@ -5,7 +5,7 @@ lang: en
 ---
 
 {% for post in paginator.posts %}
-<div class="post">
+<div>
   <a href="{{ post.url }}">
     <h1>{{ post.title }}</h1>
     <h4>Posted on {{ post.date | date: "%d %B %Y" }}</h4>
@@ -13,7 +13,7 @@ lang: en
   <hr>
   <div>{{ post.content }}</div>
   <hr>
-  <div class="post_informations">
+  <div>
     <img src="/images/comment.png">
     <a href="{{ post.url }}#disqus_thread">Comment</a>
     {% if post.tags %}
@@ -25,7 +25,7 @@ lang: en
 </div>
 {% endfor %}
 
-<div class="pagination">
+<div>
   <table>
     <tbody>
       <tr>
