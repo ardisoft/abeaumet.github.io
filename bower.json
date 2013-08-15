@@ -2,10 +2,10 @@
   "name": "beaumet.me",
   "dependencies": {
     "normalize-css": "1.1.2",
-    "unsemantic": "a2964c98e981ec3b7f0709d5ad45fd91c7b842b7",
-    "lunr.js": "0.4.1",
+    "KNACSS": "https://github.com/raphaelgoetter/KNACSS.git#447c3910eba6a6564a10f9427a0157931ccf0ca4",
     "requirejs": "2.1.8",
-    "requirejs-domready": "449478e133bd39ac043778fded3d9a8258be50ba"
+    "requirejs-domready": "449478e133bd39ac043778fded3d9a8258be50ba",
+    "lunr.js": "0.4.1"
   },
   "install": {
     "path": {
@@ -16,17 +16,17 @@
       "normalize-css": [
         "bower_components/normalize-css/normalize.css"
       ],
-      "unsemantic": [
-        "bower_components/unsemantic/assets/stylesheets/unsemantic-grid-responsive.css"
-      ],
-      "lunr.js": [
-        "bower_components/lunr.js/lunr.js"
+      "KNACSS": [
+        "bower_components/KNACSS/css/knacss.css"
       ],
       "requirejs": [
         "bower_components/requirejs/require.js"
       ],
       "requirejs-domready": [
         "bower_components/requirejs-domready/domReady.js"
+      ],
+      "lunr.js": [
+        "bower_components/lunr.js/lunr.js"
       ]
     }
   }
