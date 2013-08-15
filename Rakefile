@@ -32,8 +32,7 @@ task :deps do
   (system("npm install") and
    system("bower-installer") and
    system("gem install bundle") and
-   system("bundle install") and
-   FileUtils.rm_rf dependencies_dir) or abort "Failed to install dependencies!"
+   system("bundle install")) or abort "Failed to install dependencies!"
 end
 
 desc "Install dependencies (only if needed)"
