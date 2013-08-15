@@ -5,7 +5,6 @@ permalink: "/:title"
 
 tag_page_layout: tag
 tag_page_dir: tag
-#tag_page_dir_as_html: false
 
 include:
   - .nojekyll
