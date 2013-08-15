@@ -1,10 +1,11 @@
 {
   "name": "beaumet.me",
   "dependencies": {
-    "lunr.js": "0.4.1",
     "normalize-css": "2.1.2",
+    "unsemantic": "a2964c98e981ec3b7f0709d5ad45fd91c7b842b7",
+    "lunr.js": "0.4.1",
     "requirejs": "2.1.8",
-    "requirejs-domready": "latest"
+    "requirejs-domready": "449478e133bd39ac043778fded3d9a8258be50ba"
   },
   "install": {
     "path": {
@@ -12,11 +13,14 @@
       "js": "src/libs/js"
     },
     "sources": {
-      "lunr.js": [
-        "bower_components/lunr.js/lunr.js"
-      ],
       "normalize-css": [
         "bower_components/normalize-css/normalize.css"
+      ],
+      "unsemantic": [
+        "bower_components/unsemantic/assets/stylesheets/unsemantic-grid-responsive-rtl.css"
+      ],
+      "lunr.js": [
+        "bower_components/lunr.js/lunr.js"
       ],
       "requirejs": [
         "bower_components/requirejs/require.js"
