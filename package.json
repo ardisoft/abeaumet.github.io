@@ -1,5 +1,9 @@
 {
     "name": "beaumet.me",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/abeaumet/abeaumet.github.io.git"
+    }
     "scripts": {
         "preinstall": "npm install -g bower@1.1.2 bower-installer@0.4.2 requirejs@2.1.6"
     }
