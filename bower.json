@@ -1,9 +1,9 @@
 {
   "name": "beaumet.me",
   "dependencies": {
-    "lunr.js": "latest",
-    "normalize-css": "latest",
-    "requirejs": "latest",
+    "lunr.js": "0.4.1",
+    "normalize-css": "2.1.2",
+    "requirejs": "2.1.8",
     "requirejs-domready": "latest"
   },
   "install": {
