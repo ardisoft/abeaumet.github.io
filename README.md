@@ -7,4 +7,5 @@ This is my personal website source.
 
 ### License
 
-The posts have a specific license, see [here](https://github.com/abeaumet/abeaumet.github.io/blob/source/src/_posts/LICENSE.md).
+The posts have a specific license, see
+[here](https://github.com/abeaumet/abeaumet.github.io/blob/source/src/LICENSE.md).
