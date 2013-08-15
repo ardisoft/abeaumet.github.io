@@ -1,0 +1,6 @@
+{
+    "name": "beaumet.me",
+    "scripts": {
+        "preinstall": "npm install -g bower@1.1.2 bower-installer@0.4.2 requirejs@2.1.6"
+    }
+}
