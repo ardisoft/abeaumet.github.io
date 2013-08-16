@@ -7,10 +7,10 @@ This is my personal website source.
     - npm
     - GSL library (<= 1.15)
 
-### License
+### Licenses
 
-The generated blog content (including posts) have a specific license. See
+The blog posts (in the `src/_posts` directory) have a specific license. See
 [here](https://github.com/abeaumet/abeaumet.github.io/blob/source/src/LICENSE.md).
 
-For any other file. See [here](https://github.com/abeaumet/abeaumet.github.io/blob/source/LICENSE).
+For any other file, see [here](https://github.com/abeaumet/abeaumet.github.io/blob/source/LICENSE).
 
