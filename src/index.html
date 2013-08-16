@@ -5,7 +5,7 @@ lang: en
 ---
 
 {% for post in paginator.posts %}
-<div class="pa4 pb1 white mb2 borderg">
+<div>
   <a href="{{ post.url }}">
     <h1>{{ post.title }}</h1>
     <h4>Posted on {{ post.date | date: "%d %B %Y" }}</h4>
@@ -27,20 +27,20 @@ lang: en
 </div>
 {% endfor %}
 
-<div class="borderg white pa3">
-  <table class="w100">
+<div>
+  <table>
     <tbody>
       <tr>
-        <td class="w33 txtleft">
+        <td>
           {% if paginator.previous_page %}
           <a href="/">&laquo; Beginning</a>
           <a href="/{% if paginator.previous_page > 1 %}page/{{ paginator.previous_page }} {% endif %}">Previous</a>
           {% endif %}
         </td>
-        <td class="w33 txtcenter">
+        <td>
           Page: {{ paginator.page }} / {{ paginator.total_pages }}
         </td>
-        <td class="w33 txtright">
+        <td>
           {% if paginator.next_page %}
           <a href="/page/{{ paginator.next_page }}">Next</a>
           <a href="/page/{{ paginator.total_pages }}">End &raquo; </a>

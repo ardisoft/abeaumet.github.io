@@ -2,7 +2,6 @@
   "name": "beaumet.me",
   "dependencies": {
     "normalize-css": "1.1.2",
-    "KNACSS": "https://github.com/raphaelgoetter/KNACSS.git#447c3910eba6a6564a10f9427a0157931ccf0ca4",
     "requirejs": "2.1.8",
     "requirejs-domready": "449478e133bd39ac043778fded3d9a8258be50ba",
     "lunr.js": "0.4.1"
@@ -15,9 +14,6 @@
     "sources": {
       "normalize-css": [
         "bower_components/normalize-css/normalize.css"
-      ],
-      "KNACSS": [
-        "bower_components/KNACSS/css/knacss.css"
       ],
       "requirejs": [
         "bower_components/requirejs/require.js"

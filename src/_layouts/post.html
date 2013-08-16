@@ -2,12 +2,12 @@
 layout: light_page
 ---
 
-<div class="mw960p center">
-  <div class="borderg white mt2 pa3">
+<div>
+  <div>
     <h1>{{ page.title }}</h1>
     {% if page.tags != empty %}Tags: <em>{%for tag in page.tags %}<a href="/tag/{{ tag }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}</em><br>
     {{ content }}
   </div>
 
-  <div id="disqus_thread" style="display:none;" class="borderg mt2 white"></div>
+  <div id="disqus_thread" style="display:none;"></div>
 </div>
