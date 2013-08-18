@@ -18,7 +18,7 @@ libs_dir = "#{source_dir}/libs"
 # Sass
 sass_input_dir = "#{source_dir}/_scss"
 sass_output_dir = "#{source_dir}/css"
-sass_common_option = "#{sass_input_dir}:#{sass_output_dir} --no-cache"
+sass_common_option = "#{sass_input_dir}:#{sass_output_dir}"
 sass_dev_option = "--style nested"
 sass_prod_option = "--style compressed"
 
