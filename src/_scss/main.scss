@@ -9,7 +9,8 @@
 $distance-between-elements : 20px;
 $navigation-bar-height : 50px;
 $left-panel-width : 200px;
-$content-width : $left-panel-width + $distance-between-elements + 660px;
+$post-width: 660px;
+$content-width : $left-panel-width + $distance-between-elements + $post-width;
 $profile_photo-height : 134px;
 
 // Color palette
@@ -50,6 +51,12 @@ div%not-floated-content { overflow: hidden; }
 div%left-floated-content { float: left; }
 div%right-floated-content { float: right; }
 
+.frame {
+  background-color: $white;
+  border: 1px solid $dark-blue;
+  padding: $distance-between-elements;
+}
+
 
 /*****************
  * Page skinning *
@@ -59,9 +66,11 @@ body {
   background-image: url("/src/images/fishbone-pattern.png");
 }
 
+//
+
 .header-background {
   background-color: $black;
-  border-bottom: ($distance-between-elements / 4) solid $dark-blue;
+  border-bottom: ($distance-between-elements / 4) solid $blue;
 }
 
 .header-container {
@@ -101,6 +110,8 @@ body {
   }
 }
 
+//
+
 .presentation-background {
   background-color: $blue;
 }
@@ -110,48 +121,40 @@ body {
 }
 
 .presentation {
-  padding-top: $distance-between-elements;
-  padding-left: ($left-panel-width + $distance-between-elements * 2);
+  padding-top: $distance-between-elements - ($distance-between-elements / 4);
+  padding-left: ($left-panel-width + $distance-between-elements * 1);
   padding-bottom: ($distance-between-elements + ($profile-photo-height / 2));
   text-transform: uppercase;
 }
 
-.main-content {
+//
+
+.main-content-container {
   @extend %float-container;
   @extend %adjusted-width;
-  position: relative;
-  top: (-($profile-photo-height / 2))
+}
+
+.main-content {
+  margin-top: (-($profile-photo-height / 2));
 }
 
 .about {
   @extend %left-floated-content;
   width: $left-panel-width;
   text-align: justify;
-  padding-right: $distance-between-elements * 2;
+  margin-right: $distance-between-elements;
+
+  .profile-photo {
+    @extend %horizontally-centered;
+  }
 
   .icon {
     margin-right: $distance-between-elements / 2;
   }
 }
 
-.profile-photo {
-  @extend %horizontally-centered;
-}
-
-.frame {
-  background-color: $white;
-  border: 1px solid $dark-blue;
-  padding: $distance-between-elements;
-}
-
-.post-full {
-  margin: 0 auto;
-  width: 600px;
-}
-
 .posts-list {
   @extend %not-floated-content;
-  /*padding-left: $distance-between-elements;*/
 
   .post {
     @extend .frame;
@@ -164,8 +167,21 @@ body {
   padding: ($distance-between-elements / 2);
 }
 
-.footer {
+.post-full {
+  @extend %horizontally-centered;
+  @extend .frame;
+  width: $post-width;
+  margin-top: $distance-between-elements;
+}
+
+//
+
+.footer-container {
   @extend %adjusted-width;
+}
+
+.footer {
+  clear: both;
+  margin-top: $distance-between-elements;
   text-align: center;
-  padding: $distance-between-elements / 2;
 }
