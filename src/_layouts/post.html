@@ -2,12 +2,10 @@
 layout: light_page
 ---
 
-<div>
-  <div>
+<div class="post-full">
     <h1>{{ page.title }}</h1>
     {% if page.tags != empty %}Tags: <em>{%for tag in page.tags %}<a href="/tag/{{ tag }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}</em><br>
     {{ content }}
-  </div>
 
   <div id="disqus_thread" style="display:none;"></div>
 </div>

@@ -5,7 +5,7 @@ lang: en
 ---
 
 {% for post in paginator.posts %}
-<div>
+<div class="post">
   <a href="{{ post.url }}">
     <h1>{{ post.title }}</h1>
     <h4>Posted on {{ post.date | date: "%d %B %Y" }}</h4>
@@ -27,7 +27,7 @@ lang: en
 </div>
 {% endfor %}
 
-<div>
+<div class="posts-pagination">
   <table>
     <tbody>
       <tr>

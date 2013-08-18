@@ -6,37 +6,49 @@
  * Configuration *
  *****************/
 
-$page-max-width : 960px;
-$page-padding : 20px;
+$distance-between-elements : 20px;
+$navigation-bar-height : 50px;
+$left-panel-width : 200px;
+$content-width : $left-panel-width + $distance-between-elements + 660px;
+$profile_photo-height : 134px;
 
 // Color palette
-$grey : #b4babd;
+$black : #404041;
+$grey : #c2c6c7;
+$dark-blue : #127ea7;
 $blue : #0aa0d9;
+$white : #fafeff;
 
 
 /*********************************
  * Generic mixins / placeholders *
  *********************************/
 
+// Alignment
+%vertically-centered { vertical-align: middle; }
+%horizontally-centered {
+  display: block;
+  margin: 0 auto;
+}
+
 // Center the content and adjust it to the page width
 div%adjusted-width {
-  max-width: $page-max-width;
-  margin: 0 auto;
+  @extend %horizontally-centered;
+  width: $content-width;
+  padding: 0 ($distance-between-elements * 2) 0 ($distance-between-elements * 2);
 }
 
 // Float positionning
 div%float-container:after {  // From: http://css-tricks.com/all-about-floats/
-  content: " "; 
-  visibility: hidden; 
-  display: block; 
-  height: 0; 
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
   clear: both;
 }
+div%not-floated-content { overflow: hidden; }
 div%left-floated-content { float: left; }
 div%right-floated-content { float: right; }
-
-// Alignment
-img%centered { vertical-align: middle; }
 
 
 /*****************
@@ -47,39 +59,113 @@ body {
   background-image: url("/src/images/fishbone-pattern.png");
 }
 
-// Header
+.header-background {
+  background-color: $black;
+  border-bottom: ($distance-between-elements / 4) solid $dark-blue;
+}
 
 .header-container {
-  background-color: $grey;
+  @extend %adjusted-width;
+  @extend %float-container;
+  height: $navigation-bar-height;
 }
 
 .header {
-  @extend %adjusted-width;
-  @extend %float-container;
-  height: 40px;
-  line-height: 40px;
+  line-height: $navigation-bar-height;
+  text-align: right;
+
+  .navigation-bar {
+    @extend %left-floated-content;
+
+    .link {
+      color: $grey;
+      text-decoration: none;
+      margin-right: ($distance-between-elements / 2);
+    }
+
+    .link:last-child {
+      margin-right: 0;
+    }
+
+    .link:hover {
+      color: $blue;
+    }
+  }
+
+  .search-bar {
+  }
+
+  .icon {
+    @extend %vertically-centered;
+    margin-left: ($distance-between-elements / 2);
+  }
 }
 
-.navigation-bar {
-  @extend %left-floated-content;
-}
-
-.search-bar {
-  @extend %right-floated-content;
-}
-
-.rss-icon {
-  @extend %centered;
-  margin-left: 20px;
-}
-
-// Presentation
-
-.presentation-container {
+.presentation-background {
   background-color: $blue;
 }
 
-.presentation {
+.presentation-container {
   @extend %adjusted-width;
-  padding: 1em 0;
+}
+
+.presentation {
+  padding-top: $distance-between-elements;
+  padding-left: ($left-panel-width + $distance-between-elements * 2);
+  padding-bottom: ($distance-between-elements + ($profile-photo-height / 2));
+  text-transform: uppercase;
+}
+
+.main-content {
+  @extend %float-container;
+  @extend %adjusted-width;
+  position: relative;
+  top: (-($profile-photo-height / 2))
+}
+
+.about {
+  @extend %left-floated-content;
+  width: $left-panel-width;
+  text-align: justify;
+  padding-right: $distance-between-elements * 2;
+
+  .icon {
+    margin-right: $distance-between-elements / 2;
+  }
+}
+
+.profile-photo {
+  @extend %horizontally-centered;
+}
+
+.frame {
+  background-color: $white;
+  border: 1px solid $dark-blue;
+  padding: $distance-between-elements;
+}
+
+.post-full {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.posts-list {
+  @extend %not-floated-content;
+  /*padding-left: $distance-between-elements;*/
+
+  .post {
+    @extend .frame;
+    margin-bottom: $distance-between-elements;
+  }
+}
+
+.posts-pagination {
+  @extend .frame;
+  padding: ($distance-between-elements / 2);
+}
+
+.footer {
+  @extend %adjusted-width;
+  text-align: center;
+  padding: $distance-between-elements / 2;
 }
