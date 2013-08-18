@@ -15,19 +15,21 @@ layout: nil
   </head>
 
   <body>
-    <div>
-      <div>
-        <a href="/">Aymeric Beaumet</a>
-        <a href="/about">About</a>
-        <a href="/archive">Archive</a>
-        <a href="/contact">Contact</a>
+    <div class="header-container">
+      <div class="header">
+        <div class="navigation-bar">
+          <a href="/">Aymeric Beaumet</a>
+          <a href="/about">About</a>
+          <a href="/archive">Archive</a>
+          <a href="/contact">Contact</a>
+        </div>
 
-        <div>
+        <div class="search-bar">
           <form method="get" action="/search" id="search-form" style="display:none;">
-            <input type="text" placeholder="Search" name="q">
+            <input type="text" placeholder="Search in blog posts..." name="q">
             <button type="submit"></button>
           </form>
-          <a href="/rss"><img src="/images/rss.png" alt="RSS icon" title="RSS feeds"></a>
+          <a href="/rss"><img src="/images/rss.png" alt="RSS icon" title="RSS feeds" class="rss-icon"></a>
         </div>
       </div>
     </div>
@@ -38,6 +40,6 @@ layout: nil
 
     <div>
       Thanks to <a href="http://charline-bestard.com/">Charline Bestard</a> for the design. Powered by <a href="http://jekyllrb.com/"</a>Jekyll</a>. Hosted on <a href="https://github.com/abeaumet/abeaumet.github.io">Github</a>.
-  </div>
-</body>
+    </div>
+  </body>
 </html>

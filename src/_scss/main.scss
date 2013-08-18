@@ -1,2 +1,73 @@
-// Work on sane bases
+// Build on sane bases
 @import "/libs/css/normalize.css";
+
+
+/*****************
+ * Configuration *
+ *****************/
+
+$page-max-width : 960px;
+
+// Color palette
+$grey : #b4babd;
+$blue : #0aa0d9;
+
+
+/*********************************
+ * Generic mixins / placeholders *
+ *********************************/
+
+// Center the content and adjust it to the page width
+div%adjusted-width {
+  max-width: $page-max-width;
+  margin: 0 auto;
+}
+
+// Float positionning
+div%float-container:after {  // From: http://css-tricks.com/all-about-floats/
+  content: " "; 
+  visibility: hidden; 
+  display: block; 
+  height: 0; 
+  clear: both;
+}
+div%left-floated-content { float: left; }
+div%right-floated-content { float: right; }
+
+// Alignment
+img%centered { vertical-align: middle; }
+
+
+/*****************
+ * Page skinning *
+ *****************/
+
+body {
+  background-image: url("/src/images/fishbone-pattern.png");
+}
+
+// Header
+
+.header-container {
+  background-color: $grey;
+}
+
+.header {
+  @extend %adjusted-width;
+  @extend %float-container;
+  height: 40px;
+  line-height: 40px;
+}
+
+.navigation-bar {
+  @extend %left-floated-content;
+}
+
+.search-bar {
+  @extend %right-floated-content;
+}
+
+.rss-icon {
+  @extend %centered;
+  margin-left: 20px;
+}
