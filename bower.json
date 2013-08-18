@@ -1,7 +1,7 @@
 {
   "name": "beaumet.me",
   "dependencies": {
-    "normalize-css": "1.1.2",
+    "normalize-css": "2.1.2",
     "requirejs": "2.1.8",
     "requirejs-domready": "449478e133bd39ac043778fded3d9a8258be50ba",
     "lunr.js": "0.4.1"
