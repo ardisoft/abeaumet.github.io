@@ -63,7 +63,7 @@ div%right-floated-content { float: right; }
  *****************/
 
 body {
-  background-image: url("/src/images/fishbone-pattern.png");
+  background-image: url("/images/fishbone-pattern.png");
 }
 
 //
@@ -170,7 +170,6 @@ body {
 
 .post-full {
   @extend %horizontally-centered;
-  @extend .frame;
   margin-top: $distance-between-elements;
   width: $post-width;
 }
