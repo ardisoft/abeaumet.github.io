@@ -81,7 +81,6 @@ body {
 
 .header {
   line-height: $navigation-bar-height;
-  text-align: right;
 
   .navigation-bar {
     @extend %left-floated-content;
@@ -100,6 +99,8 @@ body {
       }
     }
   }
+
+  text-align: right;
 
   .search-bar {
   }
@@ -140,9 +141,9 @@ body {
 
 .about {
   @extend %left-floated-content;
+  margin-right: $distance-between-elements;
   width: $left-panel-width;
   text-align: justify;
-  margin-right: $distance-between-elements;
 
   .profile-photo {
     @extend %horizontally-centered;
@@ -170,8 +171,8 @@ body {
 .post-full {
   @extend %horizontally-centered;
   @extend .frame;
-  width: $post-width;
   margin-top: $distance-between-elements;
+  width: $post-width;
 }
 
 //
@@ -181,7 +182,6 @@ body {
 }
 
 .footer {
-  clear: both;
   margin-top: $distance-between-elements;
   text-align: center;
 }
