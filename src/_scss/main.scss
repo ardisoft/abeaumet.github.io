@@ -6,7 +6,7 @@
  * Configuration *
  *****************/
 
-$distance-between-elements : 20px;
+$distance-between-elements : 25px;
 $navigation-bar-height : 50px;
 $left-panel-width : 200px;
 $post-width: 660px;
@@ -123,7 +123,7 @@ body {
 
 .presentation {
   padding-top: $distance-between-elements - ($distance-between-elements / 4);
-  padding-left: ($left-panel-width + $distance-between-elements * 1);
+  padding-left: ($left-panel-width + $distance-between-elements * 2);
   padding-bottom: ($distance-between-elements + ($profile-photo-height / 2));
   text-transform: uppercase;
 }
@@ -141,7 +141,7 @@ body {
 
 .about {
   @extend %left-floated-content;
-  margin-right: $distance-between-elements;
+  margin-right: 2 * $distance-between-elements;
   width: $left-panel-width;
   text-align: justify;
 
@@ -182,5 +182,6 @@ body {
 
 .footer {
   margin-top: $distance-between-elements;
+  margin-bottom: ($distance-between-elements / 2);
   text-align: center;
 }
