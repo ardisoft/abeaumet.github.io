@@ -90,14 +90,14 @@ body {
       color: $grey;
       text-decoration: none;
       margin-right: ($distance-between-elements / 2);
-    }
 
-    .link:last-child {
-      margin-right: 0;
-    }
+      &:last-child {
+        margin-right: 0;
+      }
 
-    .link:hover {
-      color: $blue;
+      &:hover {
+        color: $blue;
+      }
     }
   }
 
