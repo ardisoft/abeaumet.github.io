@@ -1,51 +1,12 @@
 ---
-layout: full_page
-title: Home
-lang: en
+layout: default
 ---
 
-{% for post in paginator.posts %}
-<div class="post">
-  <a href="{{ post.url }}">
-    <h1>{{ post.title }}</h1>
-    <h4>Posted on {{ post.date | date: "%d %B %Y" }}</h4>
-  </a>
-  <hr>
-  <div>
-    {{ post.content }}
-  </div>
-  <hr>
-  <div>
-    <img src="/images/comment.png">
-    <a href="{{ post.url }}#disqus_thread">Comment</a>
-    {% if post.tags %}
-    <img src="/images/tag.png">{% for tag in post.tags %}<a href="/tag/{{ tag }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</a>
-    <img src="/images/permalink.png">
-    <a href="{{ post.url }}">Permalink</a>
-    {% endif %}
+<div class="about-background">
+  <div class="about-container">
+    <div class="about">
+      <img src="/images/me.png" alt="Me!" title="Smile!" class="profile-photo">
+      <p>My name is Aymeric Beaumet, I'm a 21 years old software engineer from Paris. I'm currently studying at Kent University in Canterbury, UK.</p>
+    </div>
   </div>
 </div>
-{% endfor %}
-
-<div class="posts-pagination">
-  <table>
-    <tbody>
-      <tr>
-        <td>
-          {% if paginator.previous_page %}
-          <a href="/">&laquo; Beginning</a>
-          <a href="/{% if paginator.previous_page > 1 %}page/{{ paginator.previous_page }} {% endif %}">Previous</a>
-          {% endif %}
-        </td>
-        <td>
-          Page: {{ paginator.page }} / {{ paginator.total_pages }}
-        </td>
-        <td>
-          {% if paginator.next_page %}
-          <a href="/page/{{ paginator.next_page }}">Next</a>
-          <a href="/page/{{ paginator.total_pages }}">End &raquo; </a>
-          {% endif %}
-        </td>
-      </tbody>
-    </table>
-  </div>
